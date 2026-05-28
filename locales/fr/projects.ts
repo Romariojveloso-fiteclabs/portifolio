@@ -29,21 +29,21 @@ export const projects: Project[] = [
     description:
       "Le portfolio que vous utilisez en ce moment. Un environnement de bureau interactif construit avec React et Tailwind CSS.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    url: "https://github.com/Romadeoliveira3/portifolio",
+    url: "https://github.com/romariojveloso-fiteclabs/portifolio",
   },
   {
     title: "Candidats UFRPE",
     description:
       "Analyse exploratoire des donnees sur les candidats admis a l'Universite federale rurale de Pernambuco (UFRPE) via SISU. Le depot rassemble des rapports et des notebooks Python pour examiner les scores de coupure, les types de quota et la repartition par cours et par periode, en mettant l'accent sur l'identification de tendances et de motifs academiques. Concu comme une etude technique et educative, il montre l'application pratique de la science des donnees dans le contexte educatif bresilien.",
     tech: ["Python", "Pandas", "Jupyter Notebook", "Matplotlib"],
-    url: "https://github.com/Romadeoliveira3/Candidados_UFRPE",
+    url: "https://github.com/romariojveloso-fiteclabs/Candidados_UFRPE",
   },
   {
     title: "Extracteur PDF du Journal officiel",
     description:
       "Script Python pour automatiser l'extraction de donnees a partir de PDFs publies au Journal officiel. L'utilitaire navigue sur le site avec Selenium, telecharge les PDFs pertinents et extrait des passages de texte avec PyMuPDF et des expressions regulieres, simplifiant les requetes automatisees et l'integration de donnees.",
     tech: ["Python", "Selenium", "PyMuPDF", "Regular Expressions"],
-    url: "https://github.com/Romadeoliveira3/DiarioOficial-PDFExtractor",
+    url: "https://github.com/romariojveloso-fiteclabs/DiarioOficial-PDFExtractor",
   },
   {
     title: "Gestionnaire de messages business",
@@ -60,6 +60,6 @@ export const projects: Project[] = [
       "Docker",
       "Makefile",
     ],
-    url: "https://github.com/Romadeoliveira3/Business-Messages",
+    url: "https://github.com/romariojveloso-fiteclabs/Business-Messages",
   },
 ];

@@ -55,8 +55,8 @@ This portfolio reflects my technical and creative journey — a space where tech
       {
         icon: FaGithub,
         label: "GitHub",
-        value: "Romadeoliveira3",
-        link: "https://github.com/Romadeoliveira3",
+        value: "romariojveloso-fiteclabs",
+        link: "https://github.com/romariojveloso-fiteclabs",
       },
     ],
     footer:

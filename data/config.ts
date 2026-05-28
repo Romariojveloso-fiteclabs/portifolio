@@ -20,7 +20,7 @@ export const DESKTOP_ICONS_CONFIG: Omit<DesktopIconType, "label">[] = [
     id: "GITHUB",
     icon: GithubIcon,
     type: "link",
-    url: "https://github.com/Romadeoliveira3",
+    url: "https://github.com/romariojveloso-fiteclabs",
   },
   {
     id: "LINKEDIN",
