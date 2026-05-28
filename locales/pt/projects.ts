@@ -2,6 +2,22 @@ import type { Project } from "../../types";
 
 export const projects: Project[] = [
   {
+    title: "HaveWant",
+    description:
+      "Plataforma brasileira para colecionadores e jogadores de TCG gerenciarem colecoes, negociarem cartas, encontrarem torneios e explorarem catalogos. Desenvolvida com frontend React/TypeScript, backend FastAPI, servicos de OCR e scraping, PostgreSQL, Redis, Celery e infraestrutura Docker.",
+    tech: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "OCR",
+      "Docker",
+    ],
+    url: "https://havewant.com.br",
+  },
+  {
     title: "Mercadigo",
     description:
       "Aplicação para acompanhar o valor do carrinho em tempo real, com OCR e IA para categorização de produtos. Desenvolvida em Go com infraestrutura Docker e autenticação via Keycloak. Usuário: teste@example.com Senha: test123 ",
