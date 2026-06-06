@@ -4,6 +4,15 @@
 
 Portfolio professionnel de Romário Jonas (Roma). Un simulateur de système d'exploitation classique (RomaOS) développé avec React 19, Vite, TypeScript et la Clean Architecture pour présenter sa carrière, sa formation et ses projets de manière immersive.
 
+## Démo en Ligne & Réseaux Sociaux
+
+[![RomaOS Live](https://img.shields.io/badge/Live%20Demo-RomaOS-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://romariojveloso-fiteclabs.github.io/portifolio/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/romario-jonas-veloso-427373175)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/romariojveloso-fiteclabs)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/romadeoliveira1/)
+[![Email](https://img.shields.io/badge/Email-romariojonas@outlook-D24939?style=for-the-badge&logo=microsoftoutlook&logoColor=white)](mailto:romariojonas@outlook.com.br)
+
+
 ## Stack
 
 - **Frontend :** React 19.2.0, Vite 6.2.0, TypeScript 5.8.2
