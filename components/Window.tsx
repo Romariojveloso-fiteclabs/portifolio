@@ -1,5 +1,5 @@
 import React from "react";
-import { useWindowDrag } from "../hooks/useWindowDrag";
+import { useWindowDrag } from "../hooks";
 import { useWindowStyle } from "./Window/useWindowStyle";
 import { MobileWindow } from "./Window/MobileWindow";
 import { DesktopWindow } from "./Window/DesktopWindow";

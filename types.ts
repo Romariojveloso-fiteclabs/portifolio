@@ -112,3 +112,10 @@ export interface TaskbarProps {
   onWindowTabClick: (id: string) => void;
   activeWindowId: string | null;
 }
+
+export interface UseWindowDragProps {
+  initialPosition: { x: number; y: number };
+  initialSize: { width: number; height: number };
+  isMobile: boolean;
+  onFocus: () => void;
+}

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useClickOutside } from "../hooks/useClickOutside";
+import { useClickOutside } from "../hooks";
 import { StartMenuHeader } from "./StartMenu/StartMenuHeader";
 import { StartMenuItemsList } from "./StartMenu/StartMenuItemsList";
 import { useStartMenu } from "./StartMenu/useStartMenu";

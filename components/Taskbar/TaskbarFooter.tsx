@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslations } from "../../context/LanguageContext";
-import { useFormattedTime } from "../../hooks/useFormattedTime";
+import { useFormattedTime } from "../../hooks";
 import { TaskbarStartButton } from "./TaskbarStartButton";
 import { TaskbarTabs } from "./TaskbarTabs";
 import { TaskbarClock } from "./TaskbarClock";

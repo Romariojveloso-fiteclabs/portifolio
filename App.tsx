@@ -6,7 +6,7 @@ import { StartMenu } from "./components/StartMenu";
 import { InstallerWizard } from "./components/InstallerWizard";
 import { DESKTOP_ICONS_CONFIG } from "./data/config";
 import { useTranslations } from "./context/LanguageContext";
-import { useWindowManager } from "./hooks/useWindowManager";
+import { useWindowManager } from "./hooks";
 
 const App: React.FC = () => {
   const { translations } = useTranslations();

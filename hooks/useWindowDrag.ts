@@ -1,11 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
-
-interface UseWindowDragProps {
-  initialPosition: { x: number; y: number };
-  initialSize: { width: number; height: number };
-  isMobile: boolean;
-  onFocus: () => void;
-}
+import type { UseWindowDragProps } from "../types";
 
 export const useWindowDrag = ({
   initialPosition,
