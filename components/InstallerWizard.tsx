@@ -4,12 +4,8 @@ import { InstallerMobile } from "./InstallerWizard/InstallerMobile";
 import { InstallerDesktop } from "./InstallerWizard/InstallerDesktop";
 import { useInstallerLanguage } from "./InstallerWizard/useInstallerLanguage";
 import { useInstallerStepper } from "./InstallerWizard/useInstallerStepper";
+import type { InstallerWizardProps } from "../types";
 import "./InstallerWizard/InstallerWizard.css";
-
-interface InstallerWizardProps {
-  onFinish: () => void;
-  isMobile: boolean;
-}
 
 export const InstallerWizard: React.FC<InstallerWizardProps> = ({
   onFinish,

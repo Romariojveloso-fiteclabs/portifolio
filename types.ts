@@ -70,3 +70,45 @@ export interface ContactItem {
   value: string;
   link: string;
 }
+
+export interface DesktopProps {
+  icons: DesktopIconType[];
+  openWindow: (type: WindowType) => void;
+  windows: WindowInstance[];
+  closeWindow: (id: string) => void;
+  focusWindow: (id: string) => void;
+  minimizeWindow: (id: string) => void;
+  isMobile: boolean;
+}
+
+export interface InstallerWizardProps {
+  onFinish: () => void;
+  isMobile: boolean;
+}
+
+export interface StartMenuProps {
+  icons: DesktopIconType[];
+  onOpen: (type: WindowType) => void;
+  onClose: () => void;
+}
+
+export interface WindowProps {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+  initialPosition: { x: number; y: number };
+  initialSize: { width: number; height: number };
+  zIndex: number;
+  onClose: () => void;
+  onFocus: () => void;
+  onMinimize: () => void;
+  isMobile: boolean;
+}
+
+export interface TaskbarProps {
+  onStartClick: () => void;
+  isMobile: boolean;
+  windows: WindowInstance[];
+  onWindowTabClick: (id: string) => void;
+  activeWindowId: string | null;
+}

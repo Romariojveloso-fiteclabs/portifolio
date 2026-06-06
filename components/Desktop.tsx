@@ -1,17 +1,9 @@
 import React from "react";
 import { DesktopIconsGrid } from "./Desktop/DesktopIconsGrid";
 import { DesktopWindows } from "./Desktop/DesktopWindows";
-import type { DesktopIconType, WindowInstance, WindowType } from "../types";
+import type { DesktopProps } from "../types";
 
-interface DesktopProps {
-  icons: DesktopIconType[];
-  openWindow: (type: WindowType) => void;
-  windows: WindowInstance[];
-  closeWindow: (id: string) => void;
-  focusWindow: (id: string) => void;
-  minimizeWindow: (id: string) => void;
-  isMobile: boolean;
-}
+const CONTAINER_CLASS = "w-full h-full p-4";
 
 export const Desktop: React.FC<DesktopProps> = ({
   icons,
@@ -23,7 +15,7 @@ export const Desktop: React.FC<DesktopProps> = ({
   isMobile,
 }) => {
   return (
-    <main className="w-full h-full p-4">
+    <main className={CONTAINER_CLASS}>
       <DesktopIconsGrid icons={icons} openWindow={openWindow} />
       <DesktopWindows
         windows={windows}

@@ -1,0 +1,25 @@
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.2s ease-out forwards;
+}
+
+.start-menu-container {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  width: 18rem;
+  background-color: rgba(3, 7, 18, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  z-index: 40;
+  border: 1px solid rgba(217, 119, 6, 0.5);
+  animation: slide-up 0.2s ease-out forwards;
+}
