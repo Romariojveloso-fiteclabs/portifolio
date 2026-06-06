@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { WindowType, DesktopIconType } from '../types';
+import React, { useRef } from "react";
+import { WindowType, DesktopIconType } from "../types";
+import { useClickOutside } from "../hooks/useClickOutside";
 
 interface StartMenuProps {
   icons: DesktopIconType[];
@@ -7,38 +8,35 @@ interface StartMenuProps {
   onClose: () => void;
 }
 
-export const StartMenu: React.FC<StartMenuProps> = ({ icons, onOpen, onClose }) => {
+export const StartMenu: React.FC<StartMenuProps> = ({
+  icons,
+  onOpen,
+  onClose,
+}) => {
   const menuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        onClose();
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [onClose]);
-  
+  useClickOutside(menuRef, onClose);
+
   const handleItemClick = (item: DesktopIconType) => {
-     if (item.type === 'window') {
+    if (item.type === "window") {
       onOpen(item.id as WindowType);
-    } else if (item.type === 'link' && item.url) {
-      window.open(item.url, '_blank', 'noopener,noreferrer');
+    } else if (item.type === "link" && item.url) {
+      window.open(item.url, "_blank", "noopener,noreferrer");
       onClose();
     }
-  }
+  };
 
   return (
-    <div ref={menuRef} className="absolute bottom-12 left-0 w-72 bg-gray-950/95 backdrop-blur-md text-white rounded-tr-lg rounded-br-lg shadow-2xl z-40 border border-amber-600/50 animate-slide-up">
+    <div
+      ref={menuRef}
+      className="absolute bottom-12 left-0 w-72 bg-gray-950/95 backdrop-blur-md text-white rounded-tr-lg rounded-br-lg shadow-2xl z-40 border border-amber-600/50 animate-slide-up"
+    >
       <div className="p-4 border-b border-amber-600/50">
         <h2 className="font-bold text-xl text-amber-400">RomaOS</h2>
         <p className="text-sm text-gray-400">Portfolio Experience</p>
       </div>
       <ul>
-        {icons.map(item => (
+        {icons.map((item) => (
           <li key={item.id}>
             <button
               onClick={() => handleItemClick(item)}
