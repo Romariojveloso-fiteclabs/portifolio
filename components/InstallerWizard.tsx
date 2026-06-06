@@ -16,7 +16,7 @@ export const InstallerWizard: React.FC<InstallerWizardProps> = ({
   const { language, translations, toggleLanguage } = useTranslations();
   const [step, setStep] = useState(0);
   const languageOrder = useMemo(
-    () => [Language.PT, Language.EN, Language.FR],
+    () => [Language.PT, Language.EN, Language.FR, Language.ES],
     [],
   );
   const nextLanguage =
@@ -32,12 +32,16 @@ export const InstallerWizard: React.FC<InstallerWizardProps> = ({
         ? "Toque"
         : language === Language.FR
           ? "Touchez"
-          : "Tap"
+          : language === Language.ES
+            ? "Toca"
+            : "Tap"
       : language === Language.PT
         ? "Clique"
         : language === Language.FR
           ? "Cliquez"
-          : "Click";
+          : language === Language.ES
+            ? "Haz clic"
+            : "Click";
 
     return [
       {
@@ -109,13 +113,17 @@ export const InstallerWizard: React.FC<InstallerWizardProps> = ({
       ? "Mudar para Ingles"
       : language === Language.EN
         ? "Switch to French"
-        : "Passer au portugais";
+        : language === Language.FR
+          ? "Passer à l'espagnol"
+          : "Cambiar a portugués";
   const langSwitchText =
     nextLanguage === Language.PT
       ? "Portugues"
       : nextLanguage === Language.EN
         ? "English"
-        : "Francais";
+        : nextLanguage === Language.FR
+          ? "Francais"
+          : "Español";
   const mobileLayout = (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex flex-col p-4 animate-fade-in text-white text-center">
       <header className="w-full flex justify-between items-center flex-shrink-0">

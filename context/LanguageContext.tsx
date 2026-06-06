@@ -8,6 +8,7 @@ import React, {
 import { Language } from "../types";
 // FIX: Corrected import paths for translation modules to avoid resolving to empty files.
 import { en } from "../locales/en/index";
+import { es } from "../locales/es/index";
 import { fr } from "../locales/fr/index";
 import { pt } from "../locales/pt/index";
 import type { Translations } from "../locales/pt/index";
@@ -29,7 +30,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const toggleLanguage = useCallback(() => {
     setLanguage((prev) => {
-      const order = [Language.PT, Language.EN, Language.FR];
+      const order = [Language.PT, Language.EN, Language.FR, Language.ES];
       const currentIndex = order.indexOf(prev);
       return order[(currentIndex + 1) % order.length];
     });
@@ -41,6 +42,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     }
     if (language === Language.FR) {
       return fr;
+    }
+    if (language === Language.ES) {
+      return es;
     }
     return pt;
   }, [language]);

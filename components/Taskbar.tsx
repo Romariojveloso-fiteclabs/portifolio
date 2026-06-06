@@ -30,7 +30,9 @@ export const Taskbar: React.FC<TaskbarProps> = ({
       ? "en-US"
       : language === Language.FR
         ? "fr-FR"
-        : "pt-BR",
+        : language === Language.ES
+          ? "es-ES"
+          : "pt-BR",
     {
       hour: "2-digit",
       minute: "2-digit",

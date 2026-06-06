@@ -2,6 +2,7 @@ import type React from "react";
 
 export enum Language {
   EN = "en",
+  ES = "es",
   FR = "fr",
   PT = "pt",
 }
