@@ -1,6 +1,6 @@
 # Portfolio — romariojveloso
 
-[English](./README.md) | **Português**
+[English](./README.md) | **Português** | [Español](./README.es.md) | [Français](./README.fr.md)
 
 Portfolio profissional de Romario Jonas (Roma). Simulador de sistema operacional classico (RomaOS) desenvolvido com React 19, Vite, TypeScript e Clean Architecture para apresentar sua carreira, formacao e projetos de forma imersiva.
 
