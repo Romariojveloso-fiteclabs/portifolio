@@ -1,75 +1,77 @@
 # Portfolio — romariojveloso
 
-Portfolio profissional de Romario Jonas (Roma). Simulador de sistema operacional classico (RomaOS) desenvolvido com React 19, Vite, TypeScript e Clean Architecture para apresentar sua carreira, formacao e projetos de forma imersiva.
+**English** | [Português](./README.pt-BR.md)
+
+Professional portfolio of Romário Jonas (Roma). A classic operating system simulator (RomaOS) built with React 19, Vite, TypeScript, and Clean Architecture to showcase his career, education, and projects in an immersive way.
 
 ## Stack
 
 - **Frontend:** React 19.2.0, Vite 6.2.0, TypeScript 5.8.2
-- **Estilizacao:** CSS Vanilla nativo (estilos modulares puros, sem frameworks)
-- **Biblioteca de Icones:** React Icons (`react-icons`)
-- **Internacionalizacao:** Context API nativa para suporte multilingue em tempo real (Portugues, Ingles, Espanhol, Frances)
+- **Styling:** Native CSS Vanilla (pure modular styles, no frameworks)
+- **Icon Library:** React Icons (`react-icons`)
+- **Internationalization:** Native Context API for real-time multilingual support (Portuguese, English, Spanish, French)
 
-## Requisitos
+## Requirements
 
 - Node.js 20+
-- npm (ou gerenciador de pacotes equivalente)
+- npm (or equivalent package manager)
 
 ## Setup
 
-**1. Instalar dependencias**
+**1. Install dependencies**
 
 ```bash
 npm install
 ```
 
-**2. Iniciar o servidor de desenvolvimento**
+**2. Start the development server**
 
 ```bash
 npm run dev
 ```
 
-Abra o endereco exibido no seu terminal para interagir com o RomaOS localmente.
+Open the address displayed in your terminal to interact with RomaOS locally.
 
-## Comandos
+## Commands
 
 ```bash
-npm run dev      # Inicia o servidor de desenvolvimento (Vite)
-npm run build    # Compila a aplicacao para producao (dist)
-npm run preview  # Visualiza o build de producao localmente
-npm run deploy   # Executa o deploy para o GitHub Pages (gh-pages)
+npm run dev      # Start development server (Vite)
+npm run build    # Build the application for production (dist)
+npm run preview  # Preview the production build locally
+npm run deploy   # Deploy to GitHub Pages (gh-pages)
 ```
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 portifolio/
-├── components/          # Componentes visuais subdivididos e isolados por responsabilidade
-│   ├── Desktop/         # Componentes da area de trabalho
-│   ├── InstallerWizard/ # Assistente de boas-vindas
-│   ├── StartMenu/       # Subcomponentes e estilos do menu iniciar
-│   ├── Taskbar/         # Elementos da barra de tarefas, relogio e botao iniciar
-│   ├── Window/          # Controles, calculo de estilos e views mobile/desktop
-│   └── WindowContent/   # Conteudo individualizado para as janelas
-├── usecases/            # Regras de negocio puras (Clean Architecture)
-├── hooks/               # Custom hooks de integracao de estado e eventos
-├── context/             # Provedores de contexto global (LanguageContext)
-├── locales/             # Dicionarios de internacionalizacao
-└── types.ts             # Tipagens globais do sistema
+├── components/          # UI components split and isolated by responsibility
+│   ├── Desktop/         # Desktop workspace components
+│   ├── InstallerWizard/ # Welcome setup wizard
+│   ├── StartMenu/       # Start menu subcomponents and styles
+│   ├── Taskbar/         # Taskbar, clock, and start button elements
+│   ├── Window/          # Window controls, style calculations, and mobile/desktop views
+│   └── WindowContent/   # Individual window content
+├── usecases/            # Pure business logic (Clean Architecture)
+├── hooks/               # Custom hooks integrating state and events
+├── context/             # Global context providers (LanguageContext)
+├── locales/             # Internationalization dictionaries
+└── types.ts             # Global system typings
 ```
 
-## Arquitetura (Clean Architecture)
+## Architecture (Clean Architecture)
 
 ```
 usecases (business logic) → hooks (react controllers) → components (view/presentation)
 ```
 
-- **usecases:** Funcoes JavaScript/TypeScript puras e testaveis contendo as regras de negocio das janelas (abrir, focar, minimizar, fechar, sincronizar titulos, clique na barra de tarefas) sem dependencias do React.
-- **hooks:** Custom Hooks que atuam como controladores de estado (State Holders) e abstracao de interacoes (como arrastar janelas ou gerenciar cliques externos), fazendo a ponte entre os casos de uso e a UI.
-- **components:** Componentes React modularizados focados apenas em apresentacao e markup, estilizados com CSS nativo e isolado.
+- **usecases:** Pure and testable JavaScript/TypeScript functions containing window business rules (open, focus, minimize, close, sync titles, taskbar tab click) with no React dependencies.
+- **hooks:** Custom Hooks acting as state holders and interaction abstractions (such as window dragging or detecting outside clicks), bridging usecases and the UI.
+- **components:** Modular React components focused purely on presentation and markup, styled with native, isolated CSS.
 
 ## RomaOS
 
-A aplicacao simula uma area de trabalho completa onde o usuario pode:
-- **Abrir e arrastar janelas:** Sistema flexivel que controla o foco atraves de manipulacao de Z-Index incremental.
-- **Instalar o guia de inicio:** O assistente de boas-vindas ensina o usuario a interagir com os icones e a barra de tarefas.
-- **Alternar idiomas:** Um botao na barra de tarefas atualiza dinamicamente toda a interface e os titulos das janelas ativas em tempo real.
+The application simulates a fully featured desktop environment where the user can:
+- **Open and drag windows:** A flexible system that controls active focus through incremental Z-Index manipulation.
+- **Install via Setup Guide:** The onboarding guide teaches the user how to interact with icons and the taskbar.
+- **Switch languages:** A button on the taskbar dynamically translates the entire interface and active window titles in real-time.
