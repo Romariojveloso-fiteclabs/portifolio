@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -14,10 +14,10 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={`${post.data.title} — RomaOS Blog`}>
+<Layout title={`${post.data.title} — Roma Blog`}>
 	<article class="max-w-2xl mx-auto py-4">
 		<!-- Back Button -->
-		<a href="/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline mb-8">
+		<a href="/blog/index.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline mb-8">
 			&larr; Voltar para Artigos
 		</a>
 

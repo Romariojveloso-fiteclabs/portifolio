@@ -34,7 +34,9 @@ export const openWindowUseCase = (
     type,
     title,
     position: {
-      x: 150 + windows.length * 20,
+      x: type === WindowType.BLOG
+        ? Math.max(50, window.innerWidth - windowSize.width - 100)
+        : 150 + windows.length * 20,
       y: 100 + windows.length * 20,
     },
     size: windowSize,
