@@ -1,0 +1,30 @@
+{
+  "name": "Have Want BR",
+  "short_name": "Have Want BR",
+  "description": "Portfólio de Engenharia Eletrônica e Software Fullstack",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "maskable"
+    }
+  ]
+}
