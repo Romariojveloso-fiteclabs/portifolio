@@ -1,4 +1,4 @@
-const CACHE_NAME = "have-want-br-cache-v1";
+const CACHE_NAME = "romaos-cache-v1";
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
