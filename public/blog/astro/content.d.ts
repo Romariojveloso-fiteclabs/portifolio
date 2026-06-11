@@ -162,13 +162,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"micro-interactions.md": {
-	id: "micro-interactions.md";
-  slug: "micro-interactions";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "nao-ha-brilho-do-sol.md": {
 	id: "nao-ha-brilho-do-sol.md";
   slug: "nao-ha-brilho-do-sol";
@@ -179,20 +172,6 @@ declare module 'astro:content' {
 "o-mar-e-um-lugar-de-liberdade.md": {
 	id: "o-mar-e-um-lugar-de-liberdade.md";
   slug: "o-mar-e-um-lugar-de-liberdade";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"porque-astro.md": {
-	id: "porque-astro.md";
-  slug: "porque-astro";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"tailwind-v4.md": {
-	id: "tailwind-v4.md";
-  slug: "tailwind-v4";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
