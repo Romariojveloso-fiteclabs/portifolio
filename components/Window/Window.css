@@ -5,6 +5,7 @@
   flex-direction: column;
   background-color: #111827;
   z-index: 100;
+  overscroll-behavior: none;
 }
 
 .mobile-window-header {
@@ -51,6 +52,7 @@
   overflow: auto;
   background-color: #1f2937;
   color: #e5e7eb;
+  overscroll-behavior: contain;
 }
 
 .window-content-area.blog-window {

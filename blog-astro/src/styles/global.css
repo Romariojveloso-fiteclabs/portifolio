@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    overscroll-behavior: none;
+  }
   body {
     @apply antialiased selection:bg-brand-100 selection:text-slate-900;
   }
