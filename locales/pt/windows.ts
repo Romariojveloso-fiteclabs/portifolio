@@ -64,4 +64,8 @@ Este portfólio reflete minha jornada técnica e criativa — um espaço onde te
     footer:
       "Fique à vontade para entrar em contato para colaborações, projetos ou apenas trocar ideias sobre tecnologia e inovação.",
   },
+  BLOG: {
+    title: "Roma's Blog ",
+    content: "Descubra meus artigos mais recentes sobre desenvolvimento web, Astro e muito mais.",
+  },
 };

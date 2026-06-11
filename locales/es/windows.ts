@@ -64,4 +64,8 @@ Este portafolio refleja mi viaje técnico y creativo — un espacio donde la tec
     footer:
       "No dude en ponerse en contacto para colaboraciones, proyectos o simplemente para compartir ideas sobre tecnología e innovación.",
   },
+  BLOG: {
+    title: "Roma's Blog ",
+    content: "Descubre mis artículos más recientes sobre desarrollo web, Astro y mucho más.",
+  },
 };

@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const posts = await getCollection('blog');
+---
+
+<Layout title="RomaOS Dev Blog — Home">
+	<div class="space-y-8">
+		<!-- Hero Section -->
+		<section class="py-12 border-b border-slate-200 dark:border-slate-800 text-center md:text-left">
+			<h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-none">
+				Bem-vindo ao meu <span class="bg-gradient-to-r from-brand-500 to-brand-600 bg-clip-text text-transparent">Dev Blog</span>
+			</h1>
+			<p class="mt-4 text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+				Ideias, tutoriais práticos e insights sobre Engenharia de Frontend, performance de renderização, CSS escalável e arquiteturas modernas.
+			</p>
+		</section>
+
+		<!-- Posts Grid -->
+		<section class="space-y-6">
+			<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+				📝 Artigos Recentes
+			</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				{posts.map((post) => (
+					<article class="group bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-brand-500/50 shadow-sm hover:shadow transition-all flex flex-col">
+						{post.data.image && (
+							<div class="h-44 overflow-hidden relative">
+								<img 
+									src={post.data.image} 
+									alt={post.data.title} 
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+								/>
+								<span class="absolute top-3 left-3 px-2 py-0.5 text-[10px] font-bold bg-brand-500 text-white rounded">
+									{post.data.category}
+								</span>
+							</div>
+						)}
+						<div class="p-5 flex flex-col flex-grow">
+							<span class="text-xs font-mono font-medium text-slate-400 dark:text-slate-500">
+								{post.data.pubDate} • {post.data.readTime} leitura
+							</span>
+							<h3 class="mt-2 text-lg font-bold text-slate-900 dark:text-white leading-snug group-hover:text-brand-500 transition-colors">
+								<a href={`/blog/${post.slug}`}>{post.data.title}</a>
+							</h3>
+							<p class="mt-3 text-xs md:text-sm text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed flex-grow">
+								{post.data.description}
+							</p>
+							<div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-900/60 flex items-center justify-between text-xs font-bold text-brand-500">
+								<a href={`/blog/${post.slug}`}>Ler artigo completo &rarr;</a>
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		</section>
+	</div>
+</Layout>

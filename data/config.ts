@@ -7,6 +7,7 @@ import {
   ExperienceIcon,
   EducationIcon,
   LattesIcon,
+  BlogIcon,
 } from "../components/icons/Icons";
 import type { DesktopIconType } from "../types";
 import { WindowType } from "../types";
@@ -16,6 +17,7 @@ export const DESKTOP_ICONS_CONFIG: Omit<DesktopIconType, "label">[] = [
   { id: WindowType.PROJECTS, icon: ProjectsIcon, type: "window" },
   { id: WindowType.EXPERIENCE, icon: ExperienceIcon, type: "window" },
   { id: WindowType.EDUCATION, icon: EducationIcon, type: "window" },
+  { id: WindowType.BLOG, icon: BlogIcon, type: "window" },
   {
     id: "GITHUB",
     icon: GithubIcon,

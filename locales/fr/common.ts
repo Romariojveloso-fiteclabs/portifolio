@@ -8,6 +8,7 @@ export const common = {
     LINKEDIN: "LinkedIn",
     CONTACT: "Contact",
     LATTES: "CV Lattes",
+    BLOG: "Mon Blog ",
   },
   ui: {
     start: "Demarrer",

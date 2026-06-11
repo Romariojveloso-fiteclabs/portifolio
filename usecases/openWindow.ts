@@ -1,5 +1,6 @@
 import { focusWindowUseCase } from "./focusWindow";
-import type { WindowInstance, WindowType } from "../types";
+import type { WindowInstance } from "../types";
+import { WindowType } from "../types";
 
 export const openWindowUseCase = (
   windows: WindowInstance[],
@@ -27,6 +28,7 @@ export const openWindowUseCase = (
   }
 
   const newId = `${type}-${Date.now()}`;
+  const windowSize = type === WindowType.BLOG ? { width: 850, height: 600 } : { width: 600, height: 400 };
   const newWindow: WindowInstance = {
     id: newId,
     type,
@@ -35,7 +37,7 @@ export const openWindowUseCase = (
       x: 150 + windows.length * 20,
       y: 100 + windows.length * 20,
     },
-    size: { width: 600, height: 400 },
+    size: windowSize,
     zIndex: nextZIndex,
     isMinimized: false,
   };

@@ -17,6 +17,7 @@ interface LanguageContextType {
   language: Language;
   translations: Translations;
   toggleLanguage: () => void;
+  setLanguage: (lang: Language) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -49,7 +50,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     return pt;
   }, [language]);
 
-  const value = { language, translations, toggleLanguage };
+  const value = { language, translations, toggleLanguage, setLanguage };
 
   return (
     <LanguageContext.Provider value={value}>

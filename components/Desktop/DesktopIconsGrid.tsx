@@ -5,11 +5,13 @@ import type { DesktopIconType, WindowType } from "../../types";
 interface DesktopIconsGridProps {
   icons: DesktopIconType[];
   openWindow: (type: WindowType) => void;
+  isMobile: boolean;
 }
 
 export const DesktopIconsGrid: React.FC<DesktopIconsGridProps> = ({
   icons,
   openWindow,
+  isMobile,
 }) => {
   const handleClick = useCallback(
     (icon: DesktopIconType) => {
@@ -27,8 +29,10 @@ export const DesktopIconsGrid: React.FC<DesktopIconsGridProps> = ({
       {icons.map((icon) => (
         <DesktopIcon
           key={icon.id}
+          id={icon.id}
           icon={icon.icon}
           label={icon.label}
+          isMobile={isMobile}
           onClick={() => handleClick(icon)}
         />
       ))}

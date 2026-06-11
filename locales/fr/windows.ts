@@ -64,4 +64,8 @@ Ce portfolio reflete mon parcours technique et creatif — un espace ou technolo
     footer:
       "N'hesitez pas a me contacter pour des collaborations, des projets ou simplement pour echanger des idees sur la technologie et l'innovation.",
   },
+  BLOG: {
+    title: "Roma's Blog ",
+    content: "Découvrez mes derniers articles sur le développement web, Astro et plus encore.",
+  },
 };

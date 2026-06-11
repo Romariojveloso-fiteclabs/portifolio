@@ -62,4 +62,8 @@ This portfolio reflects my technical and creative journey — a space where tech
     footer:
       "Feel free to reach out for collaborations, projects, or just to exchange ideas about technology and innovation.",
   },
+  BLOG: {
+    title: "Roma's Blog ",
+    content: "Discover my latest articles about web development, Astro, and more.",
+  },
 };

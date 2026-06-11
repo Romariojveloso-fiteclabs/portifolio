@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from "react";
-import robotImg from "./ME-ROBOT.png";
 import { Desktop } from "./components/Desktop";
 import { Taskbar } from "./components/Taskbar";
 import { StartMenu } from "./components/StartMenu";
@@ -7,11 +6,13 @@ import { InstallerWizard } from "./components/InstallerWizard";
 import { DESKTOP_ICONS_CONFIG } from "./data/config";
 import { useTranslations } from "./context/LanguageContext";
 import { useWindowManager } from "./hooks";
+import { WindowType } from "./types";
 
 const App: React.FC = () => {
   const { translations } = useTranslations();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [showInstaller, setShowInstaller] = useState(true);
+  const [hasAutoOpened, setHasAutoOpened] = useState(false);
 
   const {
     windows,
@@ -43,6 +44,13 @@ const App: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (!isMobile && !hasAutoOpened && !showInstaller) {
+      openWindow(WindowType.BLOG);
+      setHasAutoOpened(true);
+    }
+  }, [isMobile, hasAutoOpened, showInstaller, openWindow]);
+
   const handleInstallerFinish = () => {
     setShowInstaller(false);
   };
@@ -50,10 +58,7 @@ const App: React.FC = () => {
   const isTaskbarVisible = !isMobile || windows.length === 0;
 
   return (
-    <div
-      className="w-screen h-screen bg-black bg-no-repeat bg-center bg-cover sm:bg-right sm:bg-[length:auto_110vh] font-sans overflow-hidden"
-      style={{ backgroundImage: `url(${robotImg})` }}
-    >
+    <div className="w-screen h-screen bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1920&h=1080&auto=format&fit=crop')] font-sans overflow-hidden">
       {showInstaller && (
         <InstallerWizard onFinish={handleInstallerFinish} isMobile={isMobile} />
       )}

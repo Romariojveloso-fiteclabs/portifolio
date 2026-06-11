@@ -3,3 +3,5 @@ export { ContactContent } from "./ContactContent";
 export { ProjectsContent } from "./ProjectsContent";
 export { ExperienceContent } from "./ExperienceContent";
 export { EducationContent } from "./EducationContent";
+export { BlogContent } from "./BlogContent";
+

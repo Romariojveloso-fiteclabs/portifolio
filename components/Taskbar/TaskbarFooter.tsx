@@ -14,7 +14,7 @@ export const TaskbarFooter: React.FC<TaskbarProps> = ({
   onWindowTabClick,
   activeWindowId,
 }) => {
-  const { language, translations, toggleLanguage } = useTranslations();
+  const { language, translations, setLanguage } = useTranslations();
   const formattedTime = useFormattedTime(language);
 
   return (
@@ -37,7 +37,7 @@ export const TaskbarFooter: React.FC<TaskbarProps> = ({
       {isMobile && <div className="flex-grow"></div>}
 
       <TaskbarClock
-        toggleLanguage={toggleLanguage}
+        setLanguage={setLanguage}
         language={language}
         formattedTime={formattedTime}
       />

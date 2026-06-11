@@ -16,6 +16,7 @@ export const Window: React.FC<WindowProps> = ({
   onFocus,
   onMinimize,
   isMobile,
+  isBlog = false,
 }) => {
   const {
     position,
@@ -34,7 +35,7 @@ export const Window: React.FC<WindowProps> = ({
 
   if (isMobile) {
     return (
-      <MobileWindow title={title} onClose={onClose}>
+      <MobileWindow title={title} onClose={onClose} isBlog={isBlog}>
         {children}
       </MobileWindow>
     );
@@ -50,6 +51,7 @@ export const Window: React.FC<WindowProps> = ({
       toggleMaximize={toggleMaximize}
       onMinimize={onMinimize}
       onClose={onClose}
+      isBlog={isBlog}
     >
       {children}
     </DesktopWindow>

@@ -4,12 +4,14 @@ interface MobileWindowProps {
   title: string;
   onClose: () => void;
   children: React.ReactNode;
+  isBlog?: boolean;
 }
 
 export const MobileWindow: React.FC<MobileWindowProps> = ({
   title,
   onClose,
   children,
+  isBlog,
 }) => {
   return (
     <div className="mobile-window-container">
@@ -28,7 +30,7 @@ export const MobileWindow: React.FC<MobileWindowProps> = ({
           </button>
         </div>
       </header>
-      <div className="window-content-area">{children}</div>
+      <div className={`window-content-area ${isBlog ? "blog-window" : ""}`}>{children}</div>
     </div>
   );
 };

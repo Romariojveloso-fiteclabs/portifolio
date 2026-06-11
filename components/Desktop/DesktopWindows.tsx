@@ -6,6 +6,7 @@ import {
   ContactContent,
   ExperienceContent,
   EducationContent,
+  BlogContent,
 } from "../WindowContent/index";
 import type { WindowInstance, WindowType } from "../../types";
 import { useTranslations } from "../../context/LanguageContext";
@@ -55,6 +56,8 @@ export const DesktopWindows: React.FC<DesktopWindowsProps> = ({
             education={translations.education}
           />
         );
+      case "BLOG":
+        return <BlogContent />;
       default:
         return null;
     }
@@ -76,6 +79,7 @@ export const DesktopWindows: React.FC<DesktopWindowsProps> = ({
             onFocus={() => focusWindow(win.id)}
             onMinimize={() => minimizeWindow(win.id)}
             isMobile={isMobile}
+            isBlog={win.type === "BLOG"}
           >
             {renderWindowContent(win.type)}
           </Window>

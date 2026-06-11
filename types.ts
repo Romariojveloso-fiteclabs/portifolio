@@ -13,6 +13,7 @@ export enum WindowType {
   CONTACT = "CONTACT",
   EXPERIENCE = "EXPERIENCE",
   EDUCATION = "EDUCATION",
+  BLOG = "BLOG",
   WEB = "WEB",
 }
 
@@ -103,6 +104,7 @@ export interface WindowProps {
   onFocus: () => void;
   onMinimize: () => void;
   isMobile: boolean;
+  isBlog?: boolean;
 }
 
 export interface TaskbarProps {

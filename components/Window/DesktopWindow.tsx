@@ -11,6 +11,7 @@ interface DesktopWindowProps {
   toggleMaximize: () => void;
   onMinimize: () => void;
   onClose: () => void;
+  isBlog?: boolean;
 }
 
 export const DesktopWindow: React.FC<DesktopWindowProps> = ({
@@ -23,6 +24,7 @@ export const DesktopWindow: React.FC<DesktopWindowProps> = ({
   toggleMaximize,
   onMinimize,
   onClose,
+  isBlog,
 }) => {
   return (
     <div
@@ -44,7 +46,7 @@ export const DesktopWindow: React.FC<DesktopWindowProps> = ({
           onClose={onClose}
         />
       </header>
-      <div className="window-content-area">{children}</div>
+      <div className={`window-content-area ${isBlog ? "blog-window" : ""}`}>{children}</div>
     </div>
   );
 };
