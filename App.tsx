@@ -6,13 +6,14 @@ import { InstallerWizard } from "./components/InstallerWizard";
 import { DesktopLayout } from "./components/Desktop/DesktopLayout";
 import { DESKTOP_ICONS_CONFIG } from "./data/config";
 import { useTranslations } from "./context/LanguageContext";
-import { useWindowManager, useIsMobile, useAutoOpenBlog } from "./hooks";
+import { useWindowManager, useIsMobile, useAutoOpenBlog, usePWAInstall } from "./hooks";
 import { WindowType } from "./types";
 
 const App: React.FC = () => {
   const { translations } = useTranslations();
   const isMobile = useIsMobile();
   const [showInstaller, setShowInstaller] = useState(true);
+  const { isInstallable, install } = usePWAInstall();
 
   const {
     windows,
@@ -47,7 +48,12 @@ const App: React.FC = () => {
   return (
     <DesktopLayout>
       {showInstaller && (
-        <InstallerWizard onFinish={handleInstallerFinish} isMobile={isMobile} />
+        <InstallerWizard 
+          onFinish={handleInstallerFinish} 
+          isMobile={isMobile} 
+          isInstallable={isInstallable}
+          install={install}
+        />
       )}
       <Desktop
         icons={desktopIcons}
@@ -63,6 +69,8 @@ const App: React.FC = () => {
           icons={desktopIcons}
           onOpen={openWindow}
           onClose={() => setIsStartMenuOpen(false)}
+          isInstallable={isInstallable}
+          install={install}
         />
       )}
       {isTaskbarVisible && (

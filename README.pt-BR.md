@@ -19,6 +19,7 @@ Portfolio profissional de Romario Jonas (Roma). Simulador de sistema operacional
 - **Estilizacao:** CSS Vanilla nativo (estilos modulares puros, sem frameworks)
 - **Biblioteca de Icones:** React Icons (`react-icons`)
 - **Internacionalizacao:** Context API nativa para suporte multilingue em tempo real (Portugues, Ingles, Espanhol, Frances)
+- **Integração PWA:** Manifesto nativo (`manifest.json`), service worker de cache dinâmico leve personalizado (`sw.js`), ícones responsivos da aplicação e controle em linha de instalação do PWA
 
 ## Requisitos
 
@@ -81,6 +82,15 @@ usecases (business logic) → hooks (react controllers) → components (view/pre
 ## RomaOS
 
 A aplicacao simula uma area de trabalho completa onde o usuario pode:
-- **Abrir e arrastar janelas:** Sistema flexivel que controla o foco atraves de manipulacao de Z-Index incremental.
+- **Abrir e arrastar janelas:** Sistema flexivel que controla o foco atras de manipulacao de Z-Index incremental.
 - **Instalar o guia de inicio:** O assistente de boas-vindas ensina o usuario a interagir com os icones e a barra de tarefas.
 - **Alternar idiomas:** Um botao na barra de tarefas atualiza dinamicamente toda a interface e os titulos das janelas ativas em tempo real.
+- **Instalar como PWA:** Instalar o site diretamente no computador ou tela inicial do celular através do pop-up nativo, da opção no menu Iniciar ou no passo final do assistente de boas-vindas.
+
+## PWA (Progressive Web App)
+
+O RomaOS é totalmente otimizado como um Progressive Web App instalável:
+- **Suporte Offline:** Gerenciado por um Service Worker personalizado (`sw.js`) com cache dinâmico de recursos, garantindo que o portfólio carregue mesmo sem conexão com a internet.
+- **Instalação do Aplicativo:** Oferece um botão "Instalar RomaOS" diretamente no assistente de boas-vindas (mobile e desktop) e no menu Iniciar ao acessar via conexões seguras (HTTPS ou localhost).
+- **Compatibilidade Móvel:** Ícones responsivos preparados para telas Android e iOS, com configurações de barra de status e inicialização em modo de tela cheia.
+

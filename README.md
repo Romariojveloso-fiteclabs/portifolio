@@ -19,6 +19,7 @@ Professional portfolio of Romário Jonas (Roma). A classic operating system simu
 - **Styling:** Native CSS Vanilla (pure modular styles, no frameworks)
 - **Icon Library:** React Icons (`react-icons`)
 - **Internationalization:** Native Context API for real-time multilingual support (Portuguese, English, Spanish, French)
+- **PWA Integration:** Native manifest (`manifest.json`), custom lightweight caching service worker (`sw.js`), responsive app icons, and inline PWA installation handler
 
 ## Requirements
 
@@ -84,3 +85,12 @@ The application simulates a fully featured desktop environment where the user ca
 - **Open and drag windows:** A flexible system that controls active focus through incremental Z-Index manipulation.
 - **Install via Setup Guide:** The onboarding guide teaches the user how to interact with icons and the taskbar.
 - **Switch languages:** A button on the taskbar dynamically translates the entire interface and active window titles in real-time.
+- **Install as a PWA:** Install the site directly on your desktop or mobile home screen via the native pop-up, Start Menu option, or onboarding wizard final step.
+
+## PWA (Progressive Web App)
+
+RomaOS is fully optimized as an installable Progressive Web App:
+- **Offline Support:** Power by a custom Service Worker (`sw.js`) with dynamic asset caching, allowing the portfolio experience to load instantly even without an internet connection.
+- **App Installation:** Employs a dedicated "Install RomaOS" button within the Start Menu and final onboarding step (for both desktop and mobile layouts) when visited over secure connections (HTTPS or localhost).
+- **Mobile Ready:** Prepared with custom launcher icons (192px/512px) and native Apple standalone viewport properties.
+

@@ -13,6 +13,8 @@ interface InstallerDesktopProps {
   step: number;
   handleNext: () => void;
   isLastStep: boolean;
+  isInstallable?: boolean;
+  install?: () => void;
 }
 
 export const InstallerDesktop: React.FC<InstallerDesktopProps> = ({
@@ -28,6 +30,8 @@ export const InstallerDesktop: React.FC<InstallerDesktopProps> = ({
   step,
   handleNext,
   isLastStep,
+  isInstallable,
+  install,
 }) => {
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 animate-fade-in">
@@ -87,6 +91,14 @@ export const InstallerDesktop: React.FC<InstallerDesktopProps> = ({
             </p>
           </div>
           <div className="flex items-center gap-3 flex-shrink-0">
+            {isLastStep && isInstallable && install && (
+              <button
+                onClick={install}
+                className="px-4 py-2 text-sm font-semibold rounded bg-amber-600 hover:bg-amber-500 text-slate-950 transition-colors"
+              >
+                Instalar RomaOS
+              </button>
+            )}
             <button
               onClick={handleBack}
               disabled={step === 0}

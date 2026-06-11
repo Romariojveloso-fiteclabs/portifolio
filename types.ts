@@ -85,12 +85,16 @@ export interface DesktopProps {
 export interface InstallerWizardProps {
   onFinish: () => void;
   isMobile: boolean;
+  isInstallable?: boolean;
+  install?: () => void;
 }
 
 export interface StartMenuProps {
   icons: DesktopIconType[];
   onOpen: (type: WindowType) => void;
   onClose: () => void;
+  isInstallable?: boolean;
+  install?: () => void;
 }
 
 export interface WindowProps {

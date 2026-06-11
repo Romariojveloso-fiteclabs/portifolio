@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useClickOutside, usePWAInstall } from "../hooks";
+import { useClickOutside } from "../hooks";
 import { StartMenuHeader } from "./StartMenu/StartMenuHeader";
 import { StartMenuItemsList } from "./StartMenu/StartMenuItemsList";
 import { useStartMenu } from "./StartMenu/useStartMenu";
@@ -10,12 +10,13 @@ export const StartMenu: React.FC<StartMenuProps> = ({
   icons,
   onOpen,
   onClose,
+  isInstallable,
+  install,
 }) => {
   const menuRef = useRef<HTMLDivElement>(null);
 
   useClickOutside(menuRef, onClose);
   const { handleItemClick } = useStartMenu(onOpen, onClose);
-  const { isInstallable, install } = usePWAInstall();
 
   return (
     <div ref={menuRef} className="start-menu-container">

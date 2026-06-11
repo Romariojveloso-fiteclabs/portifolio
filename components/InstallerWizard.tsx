@@ -10,6 +10,8 @@ import "./InstallerWizard/InstallerWizard.css";
 export const InstallerWizard: React.FC<InstallerWizardProps> = ({
   onFinish,
   isMobile,
+  isInstallable,
+  install,
 }) => {
   const { language, translations, toggleLanguage } = useTranslations();
 
@@ -42,6 +44,8 @@ export const InstallerWizard: React.FC<InstallerWizardProps> = ({
           handleNext={handleNext}
           isLastStep={isLastStep}
           translations={translations}
+          isInstallable={isInstallable}
+          install={install}
         />
       ) : (
         <InstallerDesktop
@@ -57,6 +61,8 @@ export const InstallerWizard: React.FC<InstallerWizardProps> = ({
           step={step}
           handleNext={handleNext}
           isLastStep={isLastStep}
+          isInstallable={isInstallable}
+          install={install}
         />
       )}
     </>

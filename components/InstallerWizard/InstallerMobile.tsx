@@ -13,6 +13,8 @@ interface InstallerMobileProps {
   handleNext: () => void;
   isLastStep: boolean;
   translations: any;
+  isInstallable?: boolean;
+  install?: () => void;
 }
 
 export const InstallerMobile: React.FC<InstallerMobileProps> = ({
@@ -28,6 +30,8 @@ export const InstallerMobile: React.FC<InstallerMobileProps> = ({
   handleNext,
   isLastStep,
   translations,
+  isInstallable,
+  install,
 }) => {
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex flex-col p-4 animate-fade-in text-white text-center">
@@ -83,6 +87,14 @@ export const InstallerMobile: React.FC<InstallerMobileProps> = ({
             />
           ))}
         </div>
+        {isLastStep && isInstallable && install && (
+          <button
+            onClick={install}
+            className="w-full max-w-xs px-4 py-3 text-base font-semibold rounded-lg bg-amber-600 hover:bg-amber-500 active:bg-amber-700 text-slate-950 transition-colors mb-2"
+          >
+            Instalar RomaOS
+          </button>
+        )}
         <button
           onClick={handleNext}
           className="w-full max-w-xs px-4 py-3 text-base font-semibold rounded-lg bg-amber-700 hover:bg-amber-600 transition-colors"
