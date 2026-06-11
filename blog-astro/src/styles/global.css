@@ -23,3 +23,7 @@
 .prose pre {
   @apply p-4 rounded-xl bg-slate-950 text-brand-400 font-mono text-sm my-4 border border-brand-500/10 overflow-x-auto;
 }
+
+.prose a {
+  @apply text-brand-600 dark:text-brand-400 font-semibold underline decoration-brand-500/30 decoration-2 underline-offset-2 hover:text-brand-500 hover:decoration-brand-500 transition-colors;
+}
