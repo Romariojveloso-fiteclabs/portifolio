@@ -28,8 +28,8 @@ export const DesktopWindows: React.FC<DesktopWindowsProps> = ({
 }) => {
   const { translations } = useTranslations();
 
-  const renderWindowContent = (type: WindowType) => {
-    switch (type) {
+  const renderWindowContent = (win: WindowInstance) => {
+    switch (win.type) {
       case "ABOUT":
         return <AboutMeContent content={translations.windows.ABOUT.content} />;
       case "PROJECTS":
@@ -81,7 +81,7 @@ export const DesktopWindows: React.FC<DesktopWindowsProps> = ({
             isMobile={isMobile}
             isBlog={win.type === "BLOG"}
           >
-            {renderWindowContent(win.type)}
+            {renderWindowContent(win)}
           </Window>
         ))}
     </>

@@ -1,39 +1,44 @@
-import React, { useCallback } from "react";
-import { DesktopIcon } from "./DesktopIcon";
-import type { DesktopIconType, WindowType } from "../../types";
+import React from "react";
+import { DesktopGridItem } from "./DesktopGridItem";
+import { useDesktopDrag, useDesktopGridStyle } from "../../hooks";
+import type { DesktopIconType } from "../../types";
 
 interface DesktopIconsGridProps {
   icons: DesktopIconType[];
-  openWindow: (type: WindowType) => void;
   isMobile: boolean;
+  onUpdateIconPosition: (id: string, gridX: number, gridY: number) => void;
+  onClickIcon: (icon: DesktopIconType) => void;
 }
 
 export const DesktopIconsGrid: React.FC<DesktopIconsGridProps> = ({
   icons,
-  openWindow,
   isMobile,
+  onUpdateIconPosition,
+  onClickIcon,
 }) => {
-  const handleClick = useCallback(
-    (icon: DesktopIconType) => {
-      if (icon.type === "window") {
-        openWindow(icon.id as WindowType);
-      } else if (icon.type === "link" && icon.url) {
-        window.open(icon.url, "_blank", "noopener,noreferrer");
-      }
-    },
-    [openWindow],
+  const { draggedId, dragOffset, handleStart, isClickBlocked } = useDesktopDrag(
+    onUpdateIconPosition,
+    isMobile
   );
 
+  const gridStyle = useDesktopGridStyle(isMobile);
+
+  const handleIconClick = (icon: DesktopIconType) => {
+    if (isClickBlocked()) return;
+    onClickIcon(icon);
+  };
+
   return (
-    <div className="grid grid-cols-3 gap-y-4 justify-items-center md:flex md:flex-col md:flex-wrap md:h-full md:content-start md:justify-start md:gap-0">
+    <div style={gridStyle}>
       {icons.map((icon) => (
-        <DesktopIcon
+        <DesktopGridItem
           key={icon.id}
-          id={icon.id}
-          icon={icon.icon}
-          label={icon.label}
+          icon={icon}
           isMobile={isMobile}
-          onClick={() => handleClick(icon)}
+          isDragged={draggedId === icon.id}
+          dragOffset={dragOffset}
+          onDragStart={handleStart}
+          onClick={handleIconClick}
         />
       ))}
     </div>

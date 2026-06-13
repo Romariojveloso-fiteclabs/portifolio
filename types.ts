@@ -18,12 +18,14 @@ export enum WindowType {
 }
 
 export interface DesktopIconType {
-  id: WindowType | "GITHUB" | "LINKEDIN" | "LATTES";
-  // FIX: Changed type to support multilingual labels.
+  id: WindowType | "GITHUB" | "LINKEDIN" | "LATTES" | string;
   label: string;
   icon: React.ComponentType<{ className?: string }>;
   type: "window" | "link";
   url?: string;
+  gridX?: number;
+  gridY?: number;
+  createdAt?: number;
 }
 
 export interface WindowInstance {
@@ -80,6 +82,9 @@ export interface DesktopProps {
   focusWindow: (id: string) => void;
   minimizeWindow: (id: string) => void;
   isMobile: boolean;
+  onSortIcons: (criteria: "name" | "date") => void;
+  onResetDesktop: () => void;
+  onUpdateIconPosition: (id: string, gridX: number, gridY: number) => void;
 }
 
 export interface InstallerWizardProps {
