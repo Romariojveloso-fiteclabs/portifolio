@@ -1,10 +1,13 @@
 import { useMemo } from "react";
-import { Language } from "../../types";
+import { Language } from "../types";
+import { useTranslations } from "../context/LanguageContext";
 
-export const useInstallerLanguage = (language: Language) => {
+export const useInstallerLanguage = () => {
+  const { language } = useTranslations();
+
   const languageOrder = useMemo(
     () => [Language.PT, Language.EN, Language.FR, Language.ES],
-    [],
+    []
   );
 
   const nextLanguage = useMemo(() => {

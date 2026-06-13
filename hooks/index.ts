@@ -12,3 +12,5 @@ export { useContextMenuPosition } from "./useContextMenuPosition";
 export { useDesktopIconStyle } from "./useDesktopIconStyle";
 export { useDesktopIconDragHandlers } from "./useDesktopIconDragHandlers";
 export { useDesktopGridStyle } from "./useDesktopGridStyle";
+export { useInstallerLanguage } from "./useInstallerLanguage";
+export { useInstallerSteps } from "./useInstallerSteps";

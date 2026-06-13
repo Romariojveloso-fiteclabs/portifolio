@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 import { Language } from "../../types";
-import { useInstallerSteps } from "./useInstallerSteps";
+import { useInstallerSteps } from "../../hooks";
 
 export const useInstallerStepper = (
   language: Language,
@@ -10,7 +10,7 @@ export const useInstallerStepper = (
 ) => {
   const [step, setStep] = useState(0);
 
-  const steps = useInstallerSteps(language, isMobile, translations);
+  const steps = useInstallerSteps();
 
   const currentStep = steps[step];
   const Icon = currentStep.Icon;

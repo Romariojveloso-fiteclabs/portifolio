@@ -2,8 +2,8 @@ import React from "react";
 import { useTranslations } from "../context/LanguageContext";
 import { InstallerMobile } from "./InstallerWizard/InstallerMobile";
 import { InstallerDesktop } from "./InstallerWizard/InstallerDesktop";
-import { useInstallerLanguage } from "./InstallerWizard/useInstallerLanguage";
 import { useInstallerStepper } from "./InstallerWizard/useInstallerStepper";
+import { useInstallerLanguage } from "../hooks";
 import type { InstallerWizardProps } from "../types";
 import "./InstallerWizard/InstallerWizard.css";
 
@@ -14,8 +14,7 @@ export const InstallerWizard: React.FC<InstallerWizardProps> = ({
   install,
 }) => {
   const { language, translations, toggleLanguage } = useTranslations();
-
-  const { nextLanguage, langSwitchLabel, langSwitchText } = useInstallerLanguage(language);
+  const { nextLanguage, langSwitchLabel, langSwitchText } = useInstallerLanguage();
   
   const {
     step,

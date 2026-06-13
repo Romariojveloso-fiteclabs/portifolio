@@ -1,13 +1,14 @@
 import { useMemo } from "react";
-import { DESKTOP_ICONS_CONFIG } from "../../data/config";
-import { Language, WindowType } from "../../types";
-import { AboutIcon } from "../icons/Icons";
+import { DESKTOP_ICONS_CONFIG } from "../data/config";
+import { Language, WindowType } from "../types";
+import { AboutIcon } from "../components/icons/Icons";
+import { useTranslations } from "../context/LanguageContext";
+import { useIsMobile } from "./useIsMobile";
 
-export const useInstallerSteps = (
-  language: Language,
-  isMobile: boolean,
-  translations: any,
-) => {
+export const useInstallerSteps = () => {
+  const { language, translations } = useTranslations();
+  const isMobile = useIsMobile();
+
   return useMemo(() => {
     const findIcon = (id: WindowType | "GITHUB" | "LINKEDIN" | "LATTES") => {
       return DESKTOP_ICONS_CONFIG.find((icon) => icon.id === id)!.icon;
