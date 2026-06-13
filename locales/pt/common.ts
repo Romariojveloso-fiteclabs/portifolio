@@ -14,6 +14,11 @@ export const common = {
     start: "Iniciar",
     view_source: "Ver Projeto",
     language_switch: "English",
+    context_menu: {
+      sort_name: "Organizar por Nome",
+      sort_date: "Organizar por Data",
+      reset: "Resetar Desktop",
+    },
     installer: {
       welcome_title: "Bem-vindo ao RomaOS!",
       welcome_description:
@@ -40,6 +45,12 @@ export const common = {
       progress: "Progresso",
       setup_guide: "Guia de Configuração - RomaOS",
       start_exploring: "Começar a Explorar",
+    },
+    pwa: {
+      title: "Instalar RomaOS",
+      description: "Deseja instalar o RomaOS como um aplicativo em seu dispositivo? Isso fornecerá acesso rápido na tela inicial e uma experiência de uso em tela cheia.",
+      confirm: "Instalar",
+      cancel: "Cancelar",
     },
   },
 };

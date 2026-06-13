@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export const usePWAInstall = () => {
   const [installPrompt, setInstallPrompt] = useState<any>(null);
+  const [showInstallPopup, setShowInstallPopup] = useState(false);
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -16,7 +17,13 @@ export const usePWAInstall = () => {
     };
   }, []);
 
-  const install = () => {
+  const triggerInstallPopup = () => {
+    if (installPrompt) {
+      setShowInstallPopup(true);
+    }
+  };
+
+  const confirmInstall = () => {
     if (installPrompt) {
       installPrompt.prompt();
       installPrompt.userChoice.then((choiceResult: any) => {
@@ -26,7 +33,18 @@ export const usePWAInstall = () => {
         setInstallPrompt(null);
       });
     }
+    setShowInstallPopup(false);
   };
 
-  return { isInstallable: !!installPrompt, install };
+  const cancelInstall = () => {
+    setShowInstallPopup(false);
+  };
+
+  return {
+    isInstallable: !!installPrompt,
+    install: triggerInstallPopup,
+    showInstallPopup,
+    confirmInstall,
+    cancelInstall,
+  };
 };

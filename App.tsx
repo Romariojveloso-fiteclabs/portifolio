@@ -4,16 +4,23 @@ import { Taskbar } from "./components/Taskbar";
 import { StartMenu } from "./components/StartMenu";
 import { InstallerWizard } from "./components/InstallerWizard";
 import { DesktopLayout } from "./components/Desktop/DesktopLayout";
+import { PWAInstallPopup } from "./components/Desktop/PWAInstallPopup";
 import { DESKTOP_ICONS_CONFIG } from "./data/config";
 import { useTranslations } from "./context/LanguageContext";
-import { useWindowManager, useIsMobile, useAutoOpenBlog, usePWAInstall } from "./hooks";
+import { useWindowManager, useIsMobile, useAutoOpenBlog, usePWAInstall, useDesktopIcons } from "./hooks";
 import { WindowType } from "./types";
 
 const App: React.FC = () => {
   const { translations } = useTranslations();
   const isMobile = useIsMobile();
   const [showInstaller, setShowInstaller] = useState(true);
-  const { isInstallable, install } = usePWAInstall();
+  const {
+    isInstallable,
+    install,
+    showInstallPopup,
+    confirmInstall,
+    cancelInstall,
+  } = usePWAInstall();
 
   const {
     windows,
@@ -27,17 +34,14 @@ const App: React.FC = () => {
     handleTaskbarClick,
   } = useWindowManager();
 
-  useAutoOpenBlog(isMobile, showInstaller, openWindow);
+  const {
+    icons: desktopIcons,
+    onSortIcons,
+    onResetDesktop,
+    onUpdateIconPosition,
+  } = useDesktopIcons(isMobile, translations);
 
-  const desktopIcons = useMemo(() => {
-    return DESKTOP_ICONS_CONFIG.map((iconConfig) => ({
-      ...iconConfig,
-      label:
-        translations.desktop_icons[
-          iconConfig.id as keyof typeof translations.desktop_icons
-        ],
-    }));
-  }, [translations]);
+  useAutoOpenBlog(isMobile, showInstaller, openWindow);
 
   const handleInstallerFinish = () => {
     setShowInstaller(false);
@@ -63,10 +67,13 @@ const App: React.FC = () => {
         focusWindow={focusWindow}
         minimizeWindow={minimizeWindow}
         isMobile={isMobile}
+        onSortIcons={onSortIcons}
+        onResetDesktop={onResetDesktop}
+        onUpdateIconPosition={onUpdateIconPosition}
       />
       {!isMobile && isStartMenuOpen && (
         <StartMenu
-          icons={desktopIcons}
+          icons={desktopIcons.filter((icon) => icon.type === "window")}
           onOpen={openWindow}
           onClose={() => setIsStartMenuOpen(false)}
           isInstallable={isInstallable}
@@ -81,6 +88,9 @@ const App: React.FC = () => {
           activeWindowId={activeWindowId}
           isMobile={isMobile}
         />
+      )}
+      {showInstallPopup && (
+        <PWAInstallPopup onConfirm={confirmInstall} onCancel={cancelInstall} />
       )}
     </DesktopLayout>
   );
