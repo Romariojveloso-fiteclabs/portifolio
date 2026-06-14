@@ -16,8 +16,6 @@ readTime: "4 min"
 image: "/logo.png"
 ---
 
-# RomaOS: como meu portfólio se tornou parte da minha reconstrução
-
 Em 2024, sofri um acidente de moto que me deixou aproximadamente seis meses sem conseguir movimentar adequadamente o braço direito. Durante esse mesmo período, a startup em que eu trabalhava começou a enfrentar dificuldades financeiras e, como consequência, acabei ficando desempregado.
 
 Embora já trabalhasse como desenvolvedor, eu ainda precisava esperar pela recuperação da minha saúde antes de tentar retornar ao mercado. Não se tratava apenas de recuperar os movimentos do braço, mas também de reconstruir minha confiança e encontrar disposição para voltar a enviar currículos, participar de entrevistas e me apresentar novamente como profissional.
