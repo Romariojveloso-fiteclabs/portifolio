@@ -1,7 +1,7 @@
 ---
 title: "RomaOS: como meu portfólio se tornou parte da minha reconstrução"
 description: "A história de como um acidente, uma fase de incerteza profissional e a vontade de voltar a criar deram origem ao RomaOS."
-pubDate: "2026-06-14"
+pubDate: "2026-06-15"
 author: "Romário Jonas"
 tags:
   - Astro
