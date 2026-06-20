@@ -148,6 +148,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"como-dezenas-de-grupos-de-whatsapp-deram-origem-ao-havewant.md": {
+	id: "como-dezenas-de-grupos-de-whatsapp-deram-origem-ao-havewant.md";
+  slug: "como-dezenas-de-grupos-de-whatsapp-deram-origem-ao-havewant";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "como-meu-portifolio-se-tornou-parte-da-minha-reconstrucao.md": {
 	id: "como-meu-portifolio-se-tornou-parte-da-minha-reconstrucao.md";
   slug: "como-meu-portifolio-se-tornou-parte-da-minha-reconstrucao";
