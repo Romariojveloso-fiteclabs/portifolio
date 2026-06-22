@@ -1,5 +1,6 @@
 import React from "react";
 import { WindowControls } from "./WindowControls";
+import { WindowResizer } from "./WindowResizer";
 
 interface DesktopWindowProps {
   title: string;
@@ -34,18 +35,7 @@ export const DesktopWindow: React.FC<DesktopWindowProps> = ({
       style={windowStyle}
       onMouseDown={onFocus}
     >
-      {!isMaximized && (
-        <>
-          <div className="resizer resizer-n" onMouseDown={(e) => handleResizeStart(e, "n")} />
-          <div className="resizer resizer-s" onMouseDown={(e) => handleResizeStart(e, "s")} />
-          <div className="resizer resizer-e" onMouseDown={(e) => handleResizeStart(e, "e")} />
-          <div className="resizer resizer-w" onMouseDown={(e) => handleResizeStart(e, "w")} />
-          <div className="resizer resizer-nw" onMouseDown={(e) => handleResizeStart(e, "nw")} />
-          <div className="resizer resizer-ne" onMouseDown={(e) => handleResizeStart(e, "ne")} />
-          <div className="resizer resizer-sw" onMouseDown={(e) => handleResizeStart(e, "sw")} />
-          <div className="resizer resizer-se" onMouseDown={(e) => handleResizeStart(e, "se")} />
-        </>
-      )}
+      {!isMaximized && <WindowResizer handleResizeStart={handleResizeStart} />}
       <header
         className="desktop-window-header"
         onMouseDown={handleMouseDown}
