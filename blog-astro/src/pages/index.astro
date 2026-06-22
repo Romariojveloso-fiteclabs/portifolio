@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import BlogFilters from '../components/BlogFilters.astro';
-import PostCard from '../components/PostCard.astro';
+import Hero from '../components/Hero.astro';
+import BlogGrid from '../components/BlogGrid.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.localeCompare(a.data.pubDate)
@@ -13,82 +13,7 @@ const categories = ['Todos', ...new Set(posts.map((post) => post.data.category))
 
 <Layout title="Roma Blog — Home">
 	<div class="space-y-8">
-		<!-- Hero Section -->
-		<section class="py-12 border-b border-slate-200 dark:border-slate-800 text-center md:text-left">
-			<h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-none">
-				Bem-vindo ao meu <span class="bg-gradient-to-r from-brand-500 to-brand-600 bg-clip-text text-transparent">Blog</span>
-			</h1>
-			<p class="mt-4 text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
-				Ideias, insights, projetos de engenharia eletrônica analógica e sistemas embarcados, desenvolvimento de software fullstack, além de tutoriais, artigos e publicações técnicas.
-			</p>
-		</section>
-
-		<!-- Posts Grid -->
-		<section class="space-y-6">
-			<BlogFilters categories={categories} />
-			
-			<div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				{posts.map((post) => (
-					<PostCard post={post} />
-				))}
-			</div>
-		</section>
+		<Hero />
+		<BlogGrid posts={posts} categories={categories} />
 	</div>
 </Layout>
-
-<script>
-	const grid = document.getElementById('posts-grid');
-	const articles = Array.from(grid.querySelectorAll('.post-item'));
-	const buttons = document.querySelectorAll('.category-btn');
-	const sortSelect = document.getElementById('sort-select');
-
-	let activeCategory = 'Todos';
-	let activeSort = 'recent';
-
-	function updateArticles() {
-		const visibleArticles = articles.filter(article => {
-			const category = article.getAttribute('data-category');
-			return activeCategory === 'Todos' || category === activeCategory;
-		});
-
-		visibleArticles.sort((a, b) => {
-			const dateA = a.getAttribute('data-date');
-			const dateB = b.getAttribute('data-date');
-			if (activeSort === 'recent') {
-				return dateB.localeCompare(dateA);
-			} else {
-				return dateA.localeCompare(dateB);
-			}
-		});
-
-		articles.forEach(article => {
-			article.style.display = 'none';
-		});
-
-		visibleArticles.forEach(article => {
-			article.style.display = 'flex';
-			grid.appendChild(article);
-		});
-	}
-
-	buttons.forEach(button => {
-		button.addEventListener('click', () => {
-			activeCategory = button.getAttribute('data-category');
-
-			buttons.forEach(btn => {
-				btn.classList.remove('bg-brand-500', 'text-white', 'border-brand-500', 'dark:bg-brand-600', 'dark:border-brand-600');
-				btn.classList.add('bg-white', 'dark:bg-slate-950', 'text-slate-600', 'dark:text-slate-400', 'border-slate-200', 'dark:border-slate-800');
-			});
-
-			button.classList.add('bg-brand-500', 'text-white', 'border-brand-500', 'dark:bg-brand-600', 'dark:border-brand-600');
-			button.classList.remove('bg-white', 'dark:bg-slate-950', 'text-slate-600', 'dark:text-slate-400', 'border-slate-200', 'dark:border-slate-800');
-
-			updateArticles();
-		});
-	});
-
-	sortSelect.addEventListener('change', (e) => {
-		activeSort = e.target.value;
-		updateArticles();
-	});
-</script>
