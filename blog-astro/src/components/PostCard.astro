@@ -6,8 +6,9 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<article 
-	class="post-item group bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-brand-500/50 shadow-sm hover:shadow transition-all flex flex-col"
+<a 
+	href={`/blog/${post.slug}.html`}
+	class="post-item group bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-brand-500/50 shadow-sm hover:shadow transition-all flex flex-col cursor-pointer"
 	data-date={post.data.pubDate}
 	data-category={post.data.category}
 >
@@ -28,13 +29,13 @@ const { post } = Astro.props;
 			{post.data.pubDate} • {post.data.readTime} leitura
 		</span>
 		<h3 class="mt-2 text-lg font-bold text-slate-900 dark:text-white leading-snug group-hover:text-brand-500 transition-colors">
-			<a href={`/blog/${post.slug}.html`}>{post.data.title}</a>
+			{post.data.title}
 		</h3>
 		<p class="mt-3 text-xs md:text-sm text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed flex-grow">
 			{post.data.description}
 		</p>
 		<div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-900/60 flex items-center justify-between text-xs font-bold text-brand-500">
-			<a href={`/blog/${post.slug}.html`}>Ler artigo completo &rarr;</a>
+			<span>Ler artigo completo &rarr;</span>
 		</div>
 	</div>
-</article>
+</a>

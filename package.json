@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run astro --prefix blog-astro -- build && (npm run astro --prefix blog-astro -- build --watch & vite)",
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
