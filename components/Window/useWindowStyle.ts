@@ -17,12 +17,12 @@ export const useWindowStyle = (
           transform: "none",
         }
       : {
-          top: position.y,
-          left: position.x,
+          top: 0,
+          left: 0,
           width: size.width,
           height: size.height,
           zIndex,
-          transform: "none",
+          transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
         };
     return windowStyle;
   }, [isMaximized, position, size, zIndex]);

@@ -59,3 +59,82 @@
   padding: 0;
   background-color: transparent;
 }
+
+/* Resizers para redimensionamento de janela no desktop */
+.resizer {
+  position: absolute;
+  user-select: none;
+}
+
+/* Bordas */
+.resizer-n {
+  top: 0;
+  left: 8px;
+  right: 8px;
+  height: 5px;
+  cursor: n-resize;
+  z-index: 10;
+}
+.resizer-s {
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 5px;
+  cursor: s-resize;
+  z-index: 10;
+}
+.resizer-e {
+  top: 8px;
+  bottom: 8px;
+  right: 0;
+  width: 5px;
+  cursor: e-resize;
+  z-index: 10;
+}
+.resizer-w {
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 5px;
+  cursor: w-resize;
+  z-index: 10;
+}
+
+/* Cantos */
+.resizer-nw {
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nw-resize;
+  z-index: 11;
+}
+.resizer-ne {
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  cursor: ne-resize;
+  z-index: 11;
+}
+.resizer-sw {
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  cursor: sw-resize;
+  z-index: 11;
+}
+.resizer-se {
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  cursor: se-resize;
+  z-index: 11;
+}
+
+/* Evitar que iframes roubem eventos de mouse durante o arraste ou redimensionamento */
+body.window-moving iframe {
+  pointer-events: none !important;
+}

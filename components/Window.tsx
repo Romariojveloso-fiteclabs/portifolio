@@ -24,6 +24,7 @@ export const Window: React.FC<WindowProps> = ({
     isMaximized,
     handleMouseDown,
     toggleMaximize,
+    handleResizeStart,
   } = useWindowDrag({
     initialPosition,
     initialSize,
@@ -52,6 +53,7 @@ export const Window: React.FC<WindowProps> = ({
       onMinimize={onMinimize}
       onClose={onClose}
       isBlog={isBlog}
+      handleResizeStart={handleResizeStart}
     >
       {children}
     </DesktopWindow>
