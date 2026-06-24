@@ -10,6 +10,13 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
+        watch: {
+          ignored: [
+            '**/blog-astro/node_modules/**',
+            '**/blog-astro/.astro/**',
+            '**/dist/**'
+          ]
+        }
       },
       plugins: [react()],
       define: {

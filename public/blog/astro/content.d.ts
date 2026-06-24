@@ -162,6 +162,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"como-uma-luminaria-simples-se-tornou-um-presente-para-minha-esposa.md": {
+	id: "como-uma-luminaria-simples-se-tornou-um-presente-para-minha-esposa.md";
+  slug: "como-uma-luminaria-simples-se-tornou-um-presente-para-minha-esposa";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "entre-duna-e-vida.md": {
 	id: "entre-duna-e-vida.md";
   slug: "entre-duna-e-vida";
