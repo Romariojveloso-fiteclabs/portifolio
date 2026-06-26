@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Desktop } from "./components/Desktop";
 import { Taskbar } from "./components/Taskbar";
 import { StartMenu } from "./components/StartMenu";
@@ -9,6 +9,7 @@ import { DESKTOP_ICONS_CONFIG } from "./data/config";
 import { useTranslations } from "./context/LanguageContext";
 import { useWindowManager, useIsMobile, useAutoOpenBlog, usePWAInstall, useDesktopIcons } from "./hooks";
 import { WindowType } from "./types";
+import { initGA, trackPageView } from "./utils/analytics";
 
 const App: React.FC = () => {
   const { translations } = useTranslations();
@@ -42,6 +43,11 @@ const App: React.FC = () => {
   } = useDesktopIcons(isMobile, translations);
 
   useAutoOpenBlog(isMobile, showInstaller, openWindow);
+
+  useEffect(() => {
+    initGA();
+    trackPageView("/", "Home");
+  }, []);
 
   const handleInstallerFinish = () => {
     setShowInstaller(false);

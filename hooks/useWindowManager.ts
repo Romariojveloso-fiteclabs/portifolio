@@ -10,6 +10,7 @@ import {
   syncWindowTitlesUseCase,
   handleTaskbarClickUseCase,
 } from "../usecases";
+import { trackPageView } from "../utils/analytics";
 
 export const useWindowManager = () => {
   const { translations } = useTranslations();
@@ -41,6 +42,7 @@ export const useWindowManager = () => {
       setWindows(updatedWindows);
       setNextZIndex(nextZ);
       setIsStartMenuOpen(startMenuState);
+      trackPageView(`/${type.toLowerCase()}`, title);
     },
     [windows, nextZIndex, translations]
   );
