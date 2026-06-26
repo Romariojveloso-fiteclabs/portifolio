@@ -30,9 +30,10 @@ export const initGA = () => {
 
 export const trackPageView = (path: string, title?: string) => {
   if (!GA_MEASUREMENT_ID || !window.gtag) return;
-  window.gtag("config", GA_MEASUREMENT_ID, {
+  window.gtag("event", "page_view", {
     page_path: path,
     page_title: title,
+    page_location: window.location.origin + path,
   });
 };
 

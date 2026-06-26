@@ -5,6 +5,7 @@ import { ContextMenu } from "./Desktop/ContextMenu";
 import { useContextMenu } from "../hooks";
 import { WindowType } from "../types";
 import type { DesktopIconType, DesktopProps } from "../types";
+import { trackEvent } from "../utils/analytics";
 
 export const Desktop: React.FC<DesktopProps> = ({
   icons,
@@ -31,6 +32,7 @@ export const Desktop: React.FC<DesktopProps> = ({
     if (icon.type === "window") {
       openWindow(icon.id as WindowType);
     } else if (icon.type === "link" && icon.url) {
+      trackEvent("click_external_link", "Outbound Link", icon.label);
       window.open(icon.url, "_blank", "noopener,noreferrer");
     }
   };
