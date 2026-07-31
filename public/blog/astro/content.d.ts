@@ -197,6 +197,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"um-oi-que-me-fez-lembrar-do-opa.md": {
+	id: "um-oi-que-me-fez-lembrar-do-opa.md";
+  slug: "um-oi-que-me-fez-lembrar-do-opa";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};

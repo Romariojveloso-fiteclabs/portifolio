@@ -11,6 +11,10 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
         watch: {
+          // Polling avoids exhausting Linux inotify watchers when the editor
+          // and Astro's parallel build watcher are running at the same time.
+          usePolling: true,
+          interval: 1000,
           ignored: [
             '**/blog-astro/node_modules/**',
             '**/blog-astro/.astro/**',
