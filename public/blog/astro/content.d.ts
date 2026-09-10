@@ -169,6 +169,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"do-desenvolvimento-full-stack-ao-appsec.md": {
+	id: "do-desenvolvimento-full-stack-ao-appsec.md";
+  slug: "do-desenvolvimento-full-stack-ao-appsec";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "entre-duna-e-vida.md": {
 	id: "entre-duna-e-vida.md";
   slug: "entre-duna-e-vida";

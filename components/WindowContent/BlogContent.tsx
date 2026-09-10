@@ -7,7 +7,7 @@ export const BlogContent: React.FC = () => {
         src="/blog/index.html"
         className="w-full h-full border-none flex-grow"
         title="Astro Blog"
-        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms"
       />
     </div>
   );
