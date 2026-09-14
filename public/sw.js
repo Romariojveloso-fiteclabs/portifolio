@@ -1,11 +1,13 @@
-const CACHE_NAME = "romaos-cache-v1";
+const CACHE_NAME = "romaos-cache-v4";
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
   "/manifest.json",
   "/logo.png",
   "/logo-192.png",
-  "/logo-512.png"
+  "/logo-512.png",
+  "/wallpaper.png",
+  "/wallpaper_mobile.png"
 ];
 
 self.addEventListener("install", (event) => {

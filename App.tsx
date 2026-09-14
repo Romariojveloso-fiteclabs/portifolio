@@ -56,7 +56,7 @@ const App: React.FC = () => {
   const isTaskbarVisible = !isMobile || windows.length === 0;
 
   return (
-    <DesktopLayout>
+    <DesktopLayout isMobile={isMobile}>
       {showInstaller && (
         <InstallerWizard 
           onFinish={handleInstallerFinish} 
