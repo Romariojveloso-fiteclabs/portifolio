@@ -17,6 +17,7 @@ export const initGA = () => {
   script.id = scriptId;
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  script.onerror = () => {};
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
@@ -25,7 +26,12 @@ export const initGA = () => {
   };
 
   window.gtag("js", new Date());
-  window.gtag("config", GA_MEASUREMENT_ID);
+  window.gtag("config", GA_MEASUREMENT_ID, {
+    send_page_view: false,
+    transport_type: "beacon",
+    anonymize_ip: true,
+    cookie_flags: "SameSite=None;Secure",
+  });
 };
 
 export const trackPageView = (path: string, title?: string) => {
