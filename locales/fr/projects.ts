@@ -18,6 +18,21 @@ export const projects: Project[] = [
     url: "https://havewant.com.br",
   },
   {
+    title: "Caatinga Malware DB",
+    description:
+      "Base de données académique et encyclopédie sur les malwares développée dans le cadre du programme de troisième cycle en Sécurité offensive et Cyber-renseignement de l'UFPE. Elle rassemble des rapports techniques, des indicateurs de compromission (IoCs), des analyses de ransomwares et des outils défensifs de récupération, associant un front-end en Astro/React à une documentation technique comme source unique de vérité.",
+    tech: [
+      "Astro",
+      "React",
+      "TypeScript",
+      "Cybersecurity",
+      "Malware Analysis",
+      "PWA",
+    ],
+    url: "https://ufpe-seguranca-ofensiva.github.io/caatinga-malware-db/",
+  },
+
+  {
     title: "Mercadigo",
     description:
       "Application permettant de suivre la valeur du panier en temps reel, avec OCR et IA pour la categorisation des produits. Developpee en Go avec une infrastructure Docker et une authentification via Keycloak.",
