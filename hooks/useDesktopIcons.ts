@@ -138,6 +138,7 @@ export const useDesktopIcons = (isMobile: boolean, translations: any) => {
       icon: configIcon?.icon || (() => null),
       type: state.type,
       url: state.url,
+      showInStartMenu: configIcon?.showInStartMenu,
       gridX: state.gridX,
       gridY: state.gridY,
       createdAt: state.createdAt,

@@ -23,6 +23,7 @@ export interface DesktopIconType {
   icon: React.ComponentType<{ className?: string }>;
   type: "window" | "link";
   url?: string;
+  showInStartMenu?: boolean;
   gridX?: number;
   gridY?: number;
   createdAt?: number;

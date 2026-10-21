@@ -9,6 +9,7 @@ import {
   LattesIcon,
   BlogIcon,
 } from "../components/icons/Icons";
+import { CaatingaIcon } from "../components/icons/CaatingaIcon";
 import type { DesktopIconType } from "../types";
 import { WindowType } from "../types";
 
@@ -37,4 +38,11 @@ export const DESKTOP_ICONS_CONFIG: Omit<DesktopIconType, "label">[] = [
     url: "http://lattes.cnpq.br/7040983804231610",
   },
   { id: WindowType.CONTACT, icon: ContactIcon, type: "window" },
+  {
+    id: "CAATINGA",
+    icon: CaatingaIcon,
+    type: "link",
+    url: "https://ufpe-seguranca-ofensiva.github.io/caatinga-malware-db/",
+    showInStartMenu: true,
+  },
 ];

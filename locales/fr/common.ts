@@ -9,6 +9,7 @@ export const common = {
     CONTACT: "Contact",
     LATTES: "CV Lattes",
     BLOG: "Mon Blog ",
+    CAATINGA: "Caatinga DB",
   },
   ui: {
     start: "Demarrer",

@@ -79,7 +79,9 @@ const App: React.FC = () => {
       />
       {!isMobile && isStartMenuOpen && (
         <StartMenu
-          icons={desktopIcons.filter((icon) => icon.type === "window")}
+          icons={desktopIcons.filter(
+            (icon) => icon.type === "window" || icon.showInStartMenu,
+          )}
           onOpen={openWindow}
           onClose={() => setIsStartMenuOpen(false)}
           isInstallable={isInstallable}

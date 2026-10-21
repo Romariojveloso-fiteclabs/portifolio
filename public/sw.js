@@ -1,4 +1,4 @@
-const CACHE_NAME = "romaos-cache-v5";
+const CACHE_NAME = "romaos-cache-v6";
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
@@ -6,6 +6,7 @@ const ASSETS_TO_CACHE = [
   "/logo.png",
   "/logo-192.png",
   "/logo-512.png",
+  "/caatinga-icon.png",
   "/wallpaper.png",
   "/wallpaper_mobile.png"
 ];
